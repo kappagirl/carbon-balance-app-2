@@ -2,9 +2,62 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Leaf, Menu, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
+const LeafIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+  </svg>
+)
+
+const MenuIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="4" x2="20" y1="12" y2="12" />
+    <line x1="4" x2="20" y1="6" y2="6" />
+    <line x1="4" x2="20" y1="18" y2="18" />
+  </svg>
+)
+
+const ExternalLinkIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M15 3h6v6" />
+    <path d="M10 14 21 3" />
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+  </svg>
+)
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +69,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2.5 font-bold text-xl hover:opacity-80 transition-opacity">
           <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-primary-foreground shadow-sm">
-            <Leaf className="w-6 h-6" />
+            <LeafIcon />
           </div>
           <span className="hidden sm:inline">EcoBalance360</span>
           <span className="sm:hidden">EB360</span>
@@ -58,7 +111,7 @@ export function Navbar() {
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
           >
             GitHub
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLinkIcon className="w-3 h-3" />
           </a>
           <a
             href="https://www.datos.gov.co/"
@@ -67,7 +120,7 @@ export function Navbar() {
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
           >
             Datos Abiertos
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLinkIcon className="w-3 h-3" />
           </a>
           <a
             href="https://www.datos.gov.co/stories/s/Publicaci-n-de-resultados-fase-1-Datos-al-Ecosiste/j4vz-7str"
@@ -76,7 +129,7 @@ export function Navbar() {
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
           >
             Documentación
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLinkIcon className="w-3 h-3" />
           </a>
           <a
             href="https://github.com/HagamosColectivo/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono/blob/main/ecobalance360_santander_2019.ipynb"
@@ -85,7 +138,7 @@ export function Navbar() {
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
           >
             API
-            <ExternalLink className="w-3 h-3" />
+            <ExternalLinkIcon className="w-3 h-3" />
           </a>
         </div>
 
@@ -97,14 +150,14 @@ export function Navbar() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-5 w-5" />
+                <MenuIcon />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] sm:w-[340px] px-6">
               <div className="flex items-center gap-2.5 mb-8 mt-2">
                 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-primary-foreground shadow-sm">
-                  <Leaf className="w-6 h-6" />
+                  <LeafIcon />
                 </div>
                 <span className="font-bold text-xl">EcoBalance360</span>
               </div>
@@ -158,7 +211,7 @@ export function Navbar() {
                     className="text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors py-3 px-4 rounded-lg flex items-center justify-between"
                   >
                     GitHub
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLinkIcon className="w-4 h-4" />
                   </a>
                   <a
                     href="https://www.datos.gov.co/"
@@ -168,7 +221,7 @@ export function Navbar() {
                     className="text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors py-3 px-4 rounded-lg flex items-center justify-between"
                   >
                     Datos Abiertos
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLinkIcon className="w-4 h-4" />
                   </a>
                   <a
                     href="https://www.datos.gov.co/stories/s/Publicaci-n-de-resultados-fase-1-Datos-al-Ecosiste/j4vz-7str"
@@ -178,7 +231,7 @@ export function Navbar() {
                     className="text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors py-3 px-4 rounded-lg flex items-center justify-between"
                   >
                     Documentación
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLinkIcon className="w-4 h-4" />
                   </a>
                   <a
                     href="https://github.com/HagamosColectivo/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono/blob/main/ecobalance360_santander_2019.ipynb"
@@ -188,7 +241,7 @@ export function Navbar() {
                     className="text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors py-3 px-4 rounded-lg flex items-center justify-between"
                   >
                     API
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLinkIcon className="w-4 h-4" />
                   </a>
                 </div>
 
