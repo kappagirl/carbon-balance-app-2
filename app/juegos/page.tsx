@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Trophy, Shuffle, Target, ArrowUpDown } from "lucide-react"
+import { TrophyIcon, ShuffleIcon, TargetIcon, ArrowUpDownIcon } from "@/components/icons"
 import Link from "next/link"
 
 export const metadata = {
@@ -10,28 +10,28 @@ export const metadata = {
 
 const games = [
   {
-    icon: Shuffle,
+    icon: ShuffleIcon,
     title: "Comparador",
     description: "Compara hasta 4 municipios y ordénalos por su balance de carbono",
     coins: "+ 0 🪙",
     href: "/juegos/comparador",
   },
   {
-    icon: Target,
+    icon: TargetIcon,
     title: "Adivina el Municipio",
     description: "Adivina si un municipio es emisor o sumidero",
     coins: "+10 🪙",
     href: "/juegos/adivina",
   },
   {
-    icon: ArrowUpDown,
+    icon: ArrowUpDownIcon,
     title: "Mayor o Menor",
     description: "Compara las emisiones entre municipios",
     coins: "+10 🪙",
     href: "/juegos/mayor-menor",
   },
   {
-    icon: Trophy,
+    icon: TrophyIcon,
     title: "Desafío del Alcalde",
     description: "Completa desafíos de gestión climática",
     coins: "+50 🪙",

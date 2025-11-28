@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Target, CheckCircle2, XCircle } from "lucide-react"
+import { ArrowLeftIcon, TargetIcon, CheckCircle2Icon, XCircleIcon } from "@/components/icons"
 import Link from "next/link"
 import { Progress } from "@/components/ui/progress"
 import { useGameStats } from "@/hooks/use-game-stats"
@@ -89,7 +89,7 @@ export default function AdivinaPage() {
           <div className="max-w-2xl mx-auto">
             <Link href="/juegos">
               <Button variant="ghost" size="sm" className="mb-6">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeftIcon className="w-4 h-4 mr-2" />
                 Volver
               </Button>
             </Link>
@@ -130,7 +130,7 @@ export default function AdivinaPage() {
         <div className="max-w-2xl mx-auto">
           <Link href="/juegos">
             <Button variant="ghost" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Volver
             </Button>
           </Link>
@@ -139,7 +139,7 @@ export default function AdivinaPage() {
 
           <div className="text-center my-8">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Target className="w-8 h-8 text-primary" />
+              <TargetIcon className="w-8 h-8 text-primary" />
               <h1 className="text-3xl font-bold">Adivina el Municipio</h1>
             </div>
             <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
@@ -179,7 +179,7 @@ export default function AdivinaPage() {
                 <div className="text-center">
                   {isCorrect ? (
                     <div className="space-y-4">
-                      <CheckCircle2 className="w-16 h-16 text-emerald-600 mx-auto" />
+                      <CheckCircle2Icon className="w-16 h-16 text-emerald-600 mx-auto" />
                       <h3 className="text-2xl font-bold text-emerald-600">¡Correcto!</h3>
                       <p className="text-muted-foreground">
                         {currentMunicipality.municipio} es un {currentMunicipality.clasificacion}
@@ -187,7 +187,7 @@ export default function AdivinaPage() {
                     </div>
                   ) : (
                     <div className="space-y-4">
-                      <XCircle className="w-16 h-16 text-rose-600 mx-auto" />
+                      <XCircleIcon className="w-16 h-16 text-rose-600 mx-auto" />
                       <h3 className="text-2xl font-bold text-rose-600">Incorrecto</h3>
                       <p className="text-muted-foreground">
                         {currentMunicipality.municipio} es un {currentMunicipality.clasificacion}

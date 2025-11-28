@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ArrowLeft, Shuffle, Minus, Plus } from "lucide-react"
+import { ArrowLeftIcon, ShuffleIcon, MinusIcon, PlusIcon } from "@/components/icons"
 import Link from "next/link"
 import { useGameStats } from "@/hooks/use-game-stats"
 import { GameStatsCard } from "@/components/game-stats-card"
@@ -89,7 +89,7 @@ export default function ComparadorPage() {
         <div className="max-w-5xl mx-auto">
           <Link href="/juegos">
             <Button variant="ghost" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Volver
             </Button>
           </Link>
@@ -98,7 +98,7 @@ export default function ComparadorPage() {
 
           <div className="text-center my-8">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Shuffle className="w-8 h-8 text-primary" />
+              <ShuffleIcon className="w-8 h-8 text-primary" />
               <h1 className="text-3xl font-bold">Comparador de Municipios</h1>
             </div>
             <p className="text-muted-foreground">Selecciona municipios y compara su balance de carbono</p>
@@ -114,7 +114,7 @@ export default function ComparadorPage() {
                   variant="outline"
                   size="icon"
                 >
-                  <Minus className="w-4 h-4" />
+                  <MinusIcon className="w-4 h-4" />
                 </Button>
                 <div className="flex items-center justify-center w-20 h-12 bg-muted rounded-md text-2xl font-bold">
                   {municipalityCount}
@@ -125,7 +125,7 @@ export default function ComparadorPage() {
                   variant="outline"
                   size="icon"
                 >
-                  <Plus className="w-4 h-4" />
+                  <PlusIcon className="w-4 h-4" />
                 </Button>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { Leaf, Target, Users, Database } from "lucide-react"
+import { LeafIcon, TargetIcon, UsersIcon, DatabaseIcon } from "@/components/icons"
 
 export const metadata = {
   title: "Acerca de - EcoBalance360",
@@ -26,10 +26,18 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold mt-8 mb-4">Objetivos</h2>
               <div className="grid gap-4 md:grid-cols-2 not-prose">
                 {[
-                  { icon: Target, title: "Visualización Clara", desc: "Presentar datos complejos de forma accesible" },
-                  { icon: Users, title: "Empoderamiento", desc: "Facilitar la toma de decisiones informadas" },
-                  { icon: Database, title: "Datos Abiertos", desc: "Transparencia y acceso público a la información" },
-                  { icon: Leaf, title: "Acción Climática", desc: "Impulsar políticas de mitigación efectivas" },
+                  {
+                    icon: TargetIcon,
+                    title: "Visualización Clara",
+                    desc: "Presentar datos complejos de forma accesible",
+                  },
+                  { icon: UsersIcon, title: "Empoderamiento", desc: "Facilitar la toma de decisiones informadas" },
+                  {
+                    icon: DatabaseIcon,
+                    title: "Datos Abiertos",
+                    desc: "Transparencia y acceso público a la información",
+                  },
+                  { icon: LeafIcon, title: "Acción Climática", desc: "Impulsar políticas de mitigación efectivas" },
                 ].map((item, index) => {
                   const Icon = item.icon
                   return (

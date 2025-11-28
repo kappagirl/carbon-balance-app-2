@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Trophy, CheckCircle2, XCircle } from "lucide-react"
+import { ArrowLeftIcon, TrophyIcon, CheckCircle2Icon, XCircleIcon } from "@/components/icons"
 import Link from "next/link"
 import { Progress } from "@/components/ui/progress"
 import { useGameStats } from "@/hooks/use-game-stats"
@@ -181,7 +181,7 @@ export default function DesafioAlcaldePage() {
           <div className="max-w-3xl mx-auto">
             <Link href="/juegos">
               <Button variant="ghost" size="sm" className="mb-6">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeftIcon className="w-4 h-4 mr-2" />
                 Volver
               </Button>
             </Link>
@@ -189,7 +189,7 @@ export default function DesafioAlcaldePage() {
             <GameStatsCard stats={stats} averageScore={averageScore} />
 
             <Card className="p-8 text-center mt-6">
-              <Trophy className="w-16 h-16 text-primary mx-auto mb-6" />
+              <TrophyIcon className="w-16 h-16 text-primary mx-auto mb-6" />
               <h1 className="text-3xl font-bold mb-4">Desafío del Alcalde</h1>
               <p className="text-muted-foreground mb-6">
                 Enfrenta desafíos reales de gestión climática municipal. Cada decisión correcta suma 10 puntos. ¿Estás
@@ -219,7 +219,7 @@ export default function DesafioAlcaldePage() {
           <div className="max-w-3xl mx-auto">
             <Link href="/juegos">
               <Button variant="ghost" size="sm" className="mb-6">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeftIcon className="w-4 h-4 mr-2" />
                 Volver
               </Button>
             </Link>
@@ -263,7 +263,7 @@ export default function DesafioAlcaldePage() {
         <div className="max-w-3xl mx-auto">
           <Link href="/juegos">
             <Button variant="ghost" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Volver
             </Button>
           </Link>
@@ -307,14 +307,13 @@ export default function DesafioAlcaldePage() {
                         <div className="flex-1 min-w-0 whitespace-normal break-words text-sm md:text-base leading-relaxed">
                           {option.text}
                         </div>
-                        {showCorrect && <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />}
-                        {showIncorrect && <XCircle className="w-5 h-5 shrink-0 mt-0.5" />}
+                        {showCorrect && <CheckCircle2Icon className="w-5 h-5 shrink-0 mt-0.5" />}
+                        {showIncorrect && <XCircleIcon className="w-5 h-5 shrink-0 mt-0.5" />}
                       </div>
                     </Button>
                   )
                 })}
               </div>
-              {/* End of fix */}
             </div>
           </Card>
 

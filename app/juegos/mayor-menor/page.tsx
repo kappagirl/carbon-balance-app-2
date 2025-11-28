@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ArrowUpDown, CheckCircle2, XCircle } from "lucide-react"
+import { ArrowLeftIcon, ArrowUpDownIcon, CheckCircle2Icon, XCircleIcon } from "@/components/icons"
 import Link from "next/link"
 import { useGameStats } from "@/hooks/use-game-stats"
 import { GameStatsCard } from "@/components/game-stats-card"
@@ -83,7 +83,7 @@ export default function MayorMenorPage() {
           <div className="max-w-2xl mx-auto">
             <Link href="/juegos">
               <Button variant="ghost" size="sm" className="mb-6">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeftIcon className="w-4 h-4 mr-2" />
                 Volver
               </Button>
             </Link>
@@ -91,7 +91,7 @@ export default function MayorMenorPage() {
             <GameStatsCard stats={stats} averageScore={averageScore} />
 
             <Card className="p-8 text-center mt-6">
-              <ArrowUpDown className="w-16 h-16 text-primary mx-auto mb-6" />
+              <ArrowUpDownIcon className="w-16 h-16 text-primary mx-auto mb-6" />
               <h1 className="text-3xl font-bold mb-4">Mayor o Menor</h1>
               <p className="text-muted-foreground mb-8">
                 Compara las emisiones totales de CO₂ entre municipios. ¿El segundo municipio emite más o menos que el
@@ -123,7 +123,7 @@ export default function MayorMenorPage() {
         <div className="max-w-4xl mx-auto">
           <Link href="/juegos">
             <Button variant="ghost" size="sm" className="mb-6">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Volver
             </Button>
           </Link>
@@ -200,12 +200,12 @@ export default function MayorMenorPage() {
               <div className="text-center">
                 {isCorrect ? (
                   <div className="space-y-2">
-                    <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
+                    <CheckCircle2Icon className="w-12 h-12 text-emerald-600 mx-auto" />
                     <h3 className="text-xl font-bold text-emerald-600">¡Correcto! +1 punto</h3>
                   </div>
                 ) : (
                   <div className="space-y-2">
-                    <XCircle className="w-12 h-12 text-rose-600 mx-auto" />
+                    <XCircleIcon className="w-12 h-12 text-rose-600 mx-auto" />
                     <h3 className="text-xl font-bold text-rose-600">Incorrecto</h3>
                   </div>
                 )}
