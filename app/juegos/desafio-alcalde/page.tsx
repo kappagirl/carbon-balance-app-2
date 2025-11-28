@@ -299,19 +299,22 @@ export default function DesafioAlcaldePage() {
                       onClick={() => handleSelectOption(index)}
                       disabled={showFeedback}
                       variant={showCorrect ? "default" : showIncorrect ? "destructive" : "outline"}
-                      className={`w-full h-auto py-4 px-6 text-left justify-start ${
+                      className={`w-full h-auto py-4 px-4 md:px-6 text-left justify-start overflow-hidden ${
                         showCorrect ? "bg-emerald-600 hover:bg-emerald-700" : ""
                       }`}
                     >
                       <div className="flex items-start gap-3 w-full">
-                        <div className="flex-1">{option.text}</div>
-                        {showCorrect && <CheckCircle2 className="w-5 h-5 shrink-0" />}
-                        {showIncorrect && <XCircle className="w-5 h-5 shrink-0" />}
+                        <div className="flex-1 min-w-0 whitespace-normal break-words text-sm md:text-base leading-relaxed">
+                          {option.text}
+                        </div>
+                        {showCorrect && <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />}
+                        {showIncorrect && <XCircle className="w-5 h-5 shrink-0 mt-0.5" />}
                       </div>
                     </Button>
                   )
                 })}
               </div>
+              {/* End of fix */}
             </div>
           </Card>
 

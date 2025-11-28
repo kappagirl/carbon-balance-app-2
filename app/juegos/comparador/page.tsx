@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ArrowLeft, Shuffle } from "lucide-react"
+import { ArrowLeft, Shuffle, Minus, Plus } from "lucide-react"
 import Link from "next/link"
 import { useGameStats } from "@/hooks/use-game-stats"
 import { GameStatsCard } from "@/components/game-stats-card"
@@ -19,7 +19,8 @@ interface Municipality {
 
 export default function ComparadorPage() {
   const [municipalities, setMunicipalities] = useState<Municipality[]>([])
-  const [selected, setSelected] = useState<string[]>(["", "", "", ""])
+  const [municipalityCount, setMunicipalityCount] = useState(2)
+  const [selected, setSelected] = useState<string[]>(["", ""])
   const [sorted, setSorted] = useState<Municipality[]>([])
   const [showResult, setShowResult] = useState(false)
   const { stats, updateStats, averageScore } = useGameStats("comparador")
@@ -31,11 +32,31 @@ export default function ComparadorPage() {
       .catch(console.error)
   }, [])
 
+  useEffect(() => {
+    setSelected((prev) => {
+      const newSelected = Array(municipalityCount).fill("")
+      return newSelected.map((_, i) => prev[i] || "")
+    })
+    setShowResult(false)
+  }, [municipalityCount])
+
   const handleSelect = (index: number, value: string) => {
     const newSelected = [...selected]
     newSelected[index] = value
     setSelected(newSelected)
     setShowResult(false)
+  }
+
+  const increaseMunicipalityCount = () => {
+    if (municipalityCount < 6) {
+      setMunicipalityCount(municipalityCount + 1)
+    }
+  }
+
+  const decreaseMunicipalityCount = () => {
+    if (municipalityCount > 2) {
+      setMunicipalityCount(municipalityCount - 1)
+    }
   }
 
   const handleCompare = () => {
@@ -52,7 +73,7 @@ export default function ComparadorPage() {
   }
 
   const handleReset = () => {
-    setSelected(["", "", "", ""])
+    setSelected(Array(municipalityCount).fill(""))
     setSorted([])
     setShowResult(false)
   }
@@ -80,10 +101,35 @@ export default function ComparadorPage() {
               <Shuffle className="w-8 h-8 text-primary" />
               <h1 className="text-3xl font-bold">Comparador de Municipios</h1>
             </div>
-            <p className="text-muted-foreground">Selecciona hasta 4 municipios y compara su balance de carbono</p>
+            <p className="text-muted-foreground">Selecciona municipios y compara su balance de carbono</p>
           </div>
 
           <Card className="p-6 mb-6 mt-6">
+            <div className="mb-6">
+              <h3 className="font-semibold mb-3">¿Cuántos municipios quieres comparar?</h3>
+              <div className="flex items-center justify-center gap-4">
+                <Button
+                  onClick={decreaseMunicipalityCount}
+                  disabled={municipalityCount <= 2}
+                  variant="outline"
+                  size="icon"
+                >
+                  <Minus className="w-4 h-4" />
+                </Button>
+                <div className="flex items-center justify-center w-20 h-12 bg-muted rounded-md text-2xl font-bold">
+                  {municipalityCount}
+                </div>
+                <Button
+                  onClick={increaseMunicipalityCount}
+                  disabled={municipalityCount >= 6}
+                  variant="outline"
+                  size="icon"
+                >
+                  <Plus className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+
             <h3 className="font-semibold mb-4">Selecciona municipios:</h3>
             <div className="grid gap-4 md:grid-cols-2 mb-6">
               {selected.map((value, index) => (
