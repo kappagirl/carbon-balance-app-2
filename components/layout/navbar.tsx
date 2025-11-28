@@ -104,42 +104,6 @@ export function Navbar() {
           >
             Acerca de
           </Link>
-          <a
-            href="https://github.com/HagamosColectivo/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-          >
-            GitHub
-            <ExternalLinkIcon className="w-3 h-3" />
-          </a>
-          <a
-            href="https://www.datos.gov.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-          >
-            Datos Abiertos
-            <ExternalLinkIcon className="w-3 h-3" />
-          </a>
-          <a
-            href="https://www.datos.gov.co/stories/s/Publicaci-n-de-resultados-fase-1-Datos-al-Ecosiste/j4vz-7str"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-          >
-            Documentación
-            <ExternalLinkIcon className="w-3 h-3" />
-          </a>
-          <a
-            href="https://github.com/HagamosColectivo/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono/blob/main/ecobalance360_santander_2019.ipynb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-          >
-            API
-            <ExternalLinkIcon className="w-3 h-3" />
-          </a>
         </div>
 
         <div className="flex items-center gap-2">
