@@ -1,10 +1,47 @@
 import { Card } from "@/components/ui/card"
 import { LeafIcon, TargetIcon, UsersIcon, DatabaseIcon } from "@/components/icons"
+import Image from "next/image"
+import { Linkedin, Github, Instagram } from "lucide-react"
 
 export const metadata = {
-  title: "Acerca de - EcoBalance360",
-  description: "Conoce más sobre EcoBalance360",
+  title: "Acerca de - EcoBalance360 | Colectivo HAGAMOS",
+  description: "Conoce EcoBalance360 y al equipo del Colectivo HAGAMOS detrás de esta herramienta de analítica territorial para el balance de carbono en Santander, Colombia.",
 }
+
+const teamMembers = [
+  {
+    name: "Marilyn Barbosa",
+    role: "Scrum Master",
+    description: "Bióloga y Científica de Datos",
+    image: "/images/DannaMarilynBarbosa.png",
+    linkedin: "https://www.linkedin.com/in/danna-marilyn-barbosa-cardenas/",
+    github: "https://github.com/kappagirl",
+  },
+  {
+    name: "Mario Álvarez",
+    role: "Developer",
+    description: "Ing. de Automatización y Desarrollador",
+    image: "/images/MarioDavidAlvarez.png",
+    linkedin: "https://www.linkedin.com/in/mrdavidalv/",
+    github: "https://github.com/MrDavidAlv",
+  },
+  {
+    name: "Ana Maria Arosa",
+    role: "Developer",
+    description: "Mercadóloga y Analista de Datos",
+    image: "/images/AnaMariaArosa.png",
+    linkedin: "https://www.linkedin.com/in/ana-arosa/",
+    github: "https://github.com/anamarosag",
+  },
+  {
+    name: "Lucía O. Cardenas",
+    role: "Product Owner",
+    description: "Ingeniera de alimentos y Gestora de Innovación.",
+    image: "/images/MarthaOrtizCardenas.png",
+    linkedin: "https://www.linkedin.com/in/luciacardenas/",
+    github: "https://github.com/carluute",
+  },
+]
 
 export default function AboutPage() {
   return (
@@ -75,6 +112,99 @@ export default function AboutPage() {
               </p>
             </div>
           </Card>
+
+          <Card className="p-8">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <Image
+                src="/images/colectivohagamos.png"
+                alt="Colectivo HAGAMOS"
+                width={300}
+                height={78}
+                className="mb-2"
+              />
+              <p className="text-muted-foreground max-w-2xl">
+                Equipo multidisciplinario que promueve la identidad, la educación y el respeto por la diversidad y el ambiente.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2 justify-center">
+                <a
+                  href="https://github.com/ColectivoHagamos/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                  aria-label="Repositorio de EcoBalance360"
+                >
+                  <Github className="w-5 h-5" />
+                  <span className="text-sm font-medium">Ver Proyecto</span>
+                </a>
+                <a
+                  href="https://github.com/ColectivoHagamos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
+                  aria-label="GitHub de Colectivo HAGAMOS"
+                >
+                  <Github className="w-5 h-5" />
+                  <span className="text-sm font-medium">GitHub</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/hagamoses"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
+                  aria-label="Instagram de Colectivo HAGAMOS"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span className="text-sm font-medium">Instagram</span>
+                </a>
+              </div>
+            </div>
+          </Card>
+
+          <div>
+            <h2 className="text-3xl font-bold text-center mb-8">Nuestro Equipo</h2>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {teamMembers.map((member, index) => (
+                <Card key={index} className="p-6 flex flex-col items-center text-center">
+                  <div className="relative w-32 h-32 mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover rounded-full"
+                      sizes="128px"
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="font-bold text-lg">{member.name}</h3>
+                      <p className="text-sm text-primary font-medium">{member.role}</p>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{member.description}</p>
+                    <div className="flex gap-3 justify-center pt-2">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        aria-label={`LinkedIn de ${member.name}`}
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                      <a
+                        href={member.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                        aria-label={`GitHub de ${member.name}`}
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
