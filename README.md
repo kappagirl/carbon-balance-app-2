@@ -1,4 +1,30 @@
-# EcoBalance360 - Balance de Carbono Municipal de Santander
+<div align="center">
+  
+<a href="https://www.canva.com/design/DAG6as54OsI/2qaZDzIoYMY8KwqDUjZKKg/view?utm_content=DAG6as54OsI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haa642ada9e#1" target="_blank">
+<img src="https://github.com/ColectivoHagamos/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono/blob/main/Doc/EcoBalance360.png?r=duu" width="90%" align="center" alt="EcoBalance360"/>
+</a>
+
+</br>
+</br>
+
+**Mapa Nacional de Captura y Emisiones de Carbono**
+
+Herramienta de analítica territorial para visualizar y simular el balance de carbono en los municipios de Colombia, identificando zonas emisoras y sumideros de CO₂.
+
+[![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
+[![Estado](https://img.shields.io/badge/Estado-Producción-brightgreen.svg)]()
+[![Google Colab](https://img.shields.io/badge/Colab-Ejecutar%20Notebook-orange.svg)](https://colab.research.google.com/drive/1aRjH__szKk7sYtouJpD1VOlVqytemwbI?usp=sharing)
+[![Stack Científico](https://img.shields.io/badge/Librerías-Pandas%20%7C%20NumPy%20%7C%20Matplotlib%20%7C%20Seaborn%20%7C%20Sklearn-purple.svg)]()
+
+
+
+**[https://colectivohagamos.com](https://colectivohagamos.com)**
+
+</div>
+
+---
 
 Aplicación profesional para visualizar y analizar el balance de carbono de los 87 municipios de Santander, Colombia.
 
@@ -58,6 +84,18 @@ Los datos de municipios incluyen:
 - `/simulador` - Simulador de escenarios (próximamente)
 - `/juegos` - Juegos educativos (próximamente)
 - `/acerca` - Información sobre el proyecto
+
+## Equipo
+
+<div align="center">
+  
+<img src="https://github.com/ColectivoHagamos/EcoBalance360-Mapa-Nacional-de-Captura-y-Emisiones-de-Carbono/blob/main/Doc/equipo.png" width="100%" align="center" alt="EcoBalance360"/>
+</div>
+
+</br>
+
+Este proyecto fue desarrollado en el marco del reto **EcoBalance360** del concurso **Datos al Ecosistema 2025** organizado por el Ministerio de Tecnologías de la Información y las Comunicaciones de Colombia (MinTIC).
+
 
 ## Soporte
 
