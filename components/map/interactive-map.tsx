@@ -218,7 +218,7 @@ export function InteractiveMap({ selectedMunicipalityName, onMunicipalitySelect 
         </Popover>
 
         {/* Select de municipio */}
-        <div className="flex-1 relative z-50 min-w-[180px]">
+        <div className="flex-1 relative min-w-[180px]">
           <Select
             value={isSelectedMunicipalityVisible ? selectedMunicipality?.municipio : undefined}
             onValueChange={handleMunicipalitySelect}
@@ -226,7 +226,7 @@ export function InteractiveMap({ selectedMunicipalityName, onMunicipalitySelect 
             <SelectTrigger className="h-8">
               <SelectValue placeholder="Seleccionar municipio..." />
             </SelectTrigger>
-            <SelectContent className="max-h-[300px] z-[100]">
+            <SelectContent className="max-h-[300px]">
               {isLoading ? (
                 <SelectItem value="loading" disabled>
                   Cargando municipios...
