@@ -604,19 +604,32 @@ Responde en español de forma clara, concisa y profesional. Usa un tono construc
           </DialogTrigger>
           <DialogContent className="!w-[100vw] sm:!w-[90vw] md:!w-[85vw] !max-w-[1400px] h-[100dvh] sm:h-[92vh] p-0 flex flex-col overflow-hidden sm:rounded-lg" showCloseButton={false}>
             <div className="flex-shrink-0 bg-background border-b">
-              <div className="px-3 md:px-6 py-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-                <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
-                  <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
-                  <div className="min-w-0">
-                    <DialogTitle className="text-base md:text-lg font-bold truncate">{municipality.municipio}</DialogTitle>
-                    <DialogDescription className="text-xs truncate">
-                      Ranking #{ranking} · {balanceSign}{formatNumber(municipality.balanceCarbono)} ton CO₂eq
-                    </DialogDescription>
+              <div className="px-3 md:px-6 py-3">
+                {/* Primera línea: Título y botón cerrar */}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
+                    <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
+                    <div className="min-w-0">
+                      <DialogTitle className="text-base md:text-lg font-bold truncate">{municipality.municipio}</DialogTitle>
+                      <DialogDescription className="text-xs truncate">
+                        Ranking #{ranking} · {balanceSign}{formatNumber(municipality.balanceCarbono)} ton CO₂eq
+                      </DialogDescription>
+                    </div>
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 flex-shrink-0"
+                    onClick={() => setIsDialogOpen(false)}
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
                 </div>
-                <div className="flex items-center gap-2 flex-wrap w-full md:w-auto">
+
+                {/* Segunda línea: Controles */}
+                <div className="flex items-center gap-2 flex-wrap">
                   <Select value={selectedModel} onValueChange={setSelectedModel}>
-                    <SelectTrigger className="h-8 w-full md:w-[220px] text-xs">
+                    <SelectTrigger className="h-8 w-full sm:w-[220px] text-xs">
                       <Settings2 className="w-3.5 h-3.5 mr-1.5" />
                       <SelectValue />
                     </SelectTrigger>
@@ -628,26 +641,16 @@ Responde en español de forma clara, concisa y profesional. Usa un tono construc
                       ))}
                     </SelectContent>
                   </Select>
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="h-8 flex-1 md:flex-initial"
-                      onClick={handleExportHTML}
-                      disabled={messages.length === 0}
-                    >
-                      <Download className="w-3.5 h-3.5 mr-1.5" />
-                      <span className="hidden sm:inline">Exportar</span>
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-8 w-8"
-                      onClick={() => setIsDialogOpen(false)}
-                    >
-                      <X className="w-4 h-4" />
-                    </Button>
-                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="h-8"
+                    onClick={handleExportHTML}
+                    disabled={messages.length === 0}
+                  >
+                    <Download className="w-3.5 h-3.5 mr-1.5" />
+                    <span className="hidden sm:inline">Exportar</span>
+                  </Button>
                 </div>
               </div>
             </div>
